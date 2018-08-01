@@ -12,7 +12,6 @@ class CashRegister
   def add_item(item, price, number = 1)
     @last = self.total += price * number
     @items[item] = number
-    # @number = number
     end
 
   def apply_discount
@@ -26,9 +25,9 @@ class CashRegister
   def items
     cart = []
     @items.each do |items_in_cart, number_of_items|
-        cart << items_in_cart.split * number_of_items
+        cart << items_in_cart.split.flatten * number_of_items
     end
-      cart.flatten
+      cart#.flatten
   end
 
   def void_last_transaction
