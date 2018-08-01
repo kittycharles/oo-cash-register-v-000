@@ -25,9 +25,9 @@ class CashRegister
   def items
     cart = []
     @items.each do |items_in_cart, number_of_items|
-        cart.flatten << items_in_cart.split * number_of_items
+        cart << items_in_cart.split * number_of_items
     end
-      cart#.flatten
+      cart.flatten
   end
 
   def void_last_transaction
